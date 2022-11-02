@@ -5,8 +5,8 @@ import (
 	// for Fprintf.
 	"fmt"
 	// for ResponseWriter, Request, HandleFunc, ListenAndServe.
-	"net/http"
 	"github.com/lucas-clemente/quic-go/http3"
+	"net/http"
 	//"os"
 	//"crypto/tls"
 	"log"
@@ -37,7 +37,7 @@ func main() {
 	//	Handler: mux,
 	//}
 	err := http3.ListenAndServeQUIC("127.0.0.1:443", "/etc/pki/tls/certs/test.crt.pem", "/etc/pki/tls/private/privkey-nopass.pem", mux)
-	if (err != nil) {
+	if err != nil {
 		log.Fatal(err)
 	}
 }
